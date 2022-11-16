@@ -1,8 +1,3 @@
-// event handler for the sign-up button
-const signupBtn = document.getElementById('signupBtn')
-signupBtn.addEventListener('click', signUp);
-
-
 // functionality allowing the user to sign-up for a new account
 const signUp = async (event) => {
   event.preventDefault();
@@ -27,3 +22,6 @@ const signUp = async (event) => {
     }
   }
 };
+// event handler for the sign-up button
+const signupBtn = document.getElementById('signupBtn')
+signupBtn.addEventListener('click', signUp);

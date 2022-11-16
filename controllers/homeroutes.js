@@ -1,8 +1,7 @@
 const router = require('express').Router();
 const { Post, User, Comment } = require('../models');
 
-
-// Find all posts for homepage
+// pull all post information from the db
 router.get('/', async (req, res) => {
   const postData = await Post.findAll({
     include: [{
@@ -17,8 +16,7 @@ router.get('/', async (req, res) => {
   res.render('homepage', { posts, loggedIn: req.session.loggedIn });
 });
 
-
-// Login route for displaying login page
+// render login page and logs the user in redirecting them to their dashboard once successfully logged in
 router.get('/login', (req, res) => {
   if (req.session.loggedIn) {
     res.redirect('dashboard');
@@ -27,7 +25,7 @@ router.get('/login', (req, res) => {
   res.render('login', { layout: 'main2' })
 });
 
-// signup route for displaying signup page
+// signs the user up and directs them to their dashboard when successfull
 router.get('/signup', (req, res) => {
   if (req.session.loggedIn) {
     res.redirect('dashboard');
@@ -36,8 +34,7 @@ router.get('/signup', (req, res) => {
   res.render('signup', { layout: 'main2' })
 });
 
-
-// TA -- Taylor Hakes helped with this route. Find one post for post page
+// select a specific post by id
 router.get('/post/:id', async (req, res) => {
   try {
     const postData = await Post.findOne(
@@ -57,10 +54,8 @@ router.get('/post/:id', async (req, res) => {
             model: Comment,
             include: [User],
           }
-         
         ]
       })
-
     const thePost = postData.get({ plain: true });
     res.render('post', {
       thePost,
@@ -72,6 +67,6 @@ router.get('/post/:id', async (req, res) => {
     console.log(err);
     res.status(500).json(err);
   }
-})
+});
 
 module.exports = router;

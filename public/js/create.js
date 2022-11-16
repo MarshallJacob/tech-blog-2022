@@ -1,7 +1,3 @@
-// event listener for creating a new post
-document.querySelector('.newPostForm').addEventListener('submit', newPost);
-createPost.addEventListener('click', showPostCreation)
-
 // handle create post functionality
 async function newPost(event) {
   event.preventDefault();
@@ -27,8 +23,7 @@ async function newPost(event) {
   } else {
     alert(response.statusText);
   }
-}
-
+};
 // shows posts after creation
 function showPostCreation() {
   const createPost = document.querySelector('#createPost');
@@ -36,3 +31,6 @@ function showPostCreation() {
   postForm.classList.remove('hide');
   createPost.classList.add('hide');
 };
+// event listener for creating a new post
+document.querySelector('.newPostForm').addEventListener('submit', newPost);
+createPost.addEventListener('click', showPostCreation)

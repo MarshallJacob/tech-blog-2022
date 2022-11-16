@@ -3,9 +3,8 @@ const { Comment } = require('../../models');
 const withAuth = require('../../utils/auth');
 
 
-// Create comment based upon the comment form
+// post route in order to create a comment and save it in the db
 router.post('/', withAuth, async (req, res) => {
- 
     try {
       const post = await Comment.create({
         comment: req.body.comment,

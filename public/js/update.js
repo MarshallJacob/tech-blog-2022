@@ -1,7 +1,13 @@
-// event listeners for updating a post
-document.querySelector('#modalUpdate').addEventListener('click', hideModal);
-document.querySelector('#modalUpdate').addEventListener('click', updatePost);
-document.querySelector('.updatePost').addEventListener('click', updatePostCreation);
+function updatePostCreation() {
+    const modal = document.querySelector('.modalBtn');
+    modal.classList.remove('hide');
+};
+function hideModal() {
+    const modal = document.querySelector('.modalBtn');
+    modal.classList.add('hide');
+    document.location.replace('/dashboard');
+
+}
 
 // full funcionlality for updating an existing users post
 async function updatePost(event) {
@@ -32,13 +38,8 @@ async function updatePost(event) {
         alert(response.statusText);
     };
 };
-function updatePostCreation() {
-    const modal = document.querySelector('.modalBtn');
-    modal.classList.remove('hide');
-};
-function hideModal() {
-    const modal = document.querySelector('.modalBtn');
-    modal.classList.add('hide');
-    document.location.replace('/dashboard');
 
-};
+// event listeners for updating a post
+document.querySelector('#modalUpdate').addEventListener('click', hideModal);
+document.querySelector('#modalUpdate').addEventListener('click', updatePost);
+document.querySelector('.updatePost').addEventListener('click', updatePostCreation);

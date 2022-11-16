@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const { User } = require('../../models');
 
-// Create user based on signup form
+// handles the creation of a new user
 router.post('/', async (req, res) => {
     try {
       const userData = await User.create({
@@ -9,7 +9,8 @@ router.post('/', async (req, res) => {
         email: req.body.email,
         password: req.body.password,
       });
-  
+      
+      // saves the session data
       req.session.save(() => {
         req.session.loggedIn = true;
         req.session.user_id = userData.id;
@@ -22,10 +23,11 @@ router.post('/', async (req, res) => {
     }
   });
 
-  // Confirming user for authentication
+  // handles the auth of the user 
 router.post('/login', async (req, res) => {
   try {
     const userData = await User.findOne({
+      // makes sure that it's the correct user
       where: {
         email: req.body.email
       },
@@ -39,7 +41,7 @@ router.post('/login', async (req, res) => {
     }
 
     const validPassword = userData.checkPassword(req.body.password);
-
+    // validate the user password
     if (!validPassword) {
       res
         .status(400)
@@ -59,7 +61,7 @@ router.post('/login', async (req, res) => {
   }
 });
 
-// Logout route for destroying session.
+// handle the logout functionality 
 router.post('/logout', (req, res) => {
     if (req.session.loggedIn) {
       req.session.destroy(() => {

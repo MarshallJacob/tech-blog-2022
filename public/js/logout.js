@@ -1,7 +1,3 @@
-// event listener for the logout button
-const logoutBtn = document.getElementById('logout');
-logoutBtn.addEventListener('click', logout);
-
 // functionality allowing the user to log out of their account
 const logout = async () => {
     const response = await fetch('/api/users/logout', {
@@ -17,3 +13,6 @@ const logout = async () => {
     });
   }
 };
+// event listener for the logout button
+const logoutBtn = document.getElementById('logout');
+logoutBtn.addEventListener('click', logout);

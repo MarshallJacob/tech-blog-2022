@@ -3,8 +3,7 @@ require('dotenv').config();
 
 let sequelize;
 
-// Initialization of access to database behind envirement variables to hide sensitive information.
-
+// make sure to set up a .env file that coincides with the sequelize process in order to use this application
 if (process.env.JAWSDB_URL) {
   sequelize = new Sequelize(process.env.JAWSDB_URL);
 } else {

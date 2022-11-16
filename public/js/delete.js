@@ -1,11 +1,3 @@
-// event listener looping through any existing posts
-const deleteBtnEl = document.getElementsByClassName('deleteBtn');
-
-for(let i = 0; i < deleteBtnEl.length; i++) {
-    const element = deleteBtnEl[i];
-    element.addEventListener('click', deleteHandler);
-};
-
 // functionaliy for deleting an existing post
 async function deleteHandler(event) {
     event.preventDefault();
@@ -22,3 +14,11 @@ async function deleteHandler(event) {
         alert(response.statusText);
     };
 };
+// event listener looping through any existing posts
+const deleteBtnEl = document.getElementsByClassName('deleteBtn');
+
+for(let i = 0; i < deleteBtnEl.length; i++) {
+    const element = deleteBtnEl[i];
+    element.addEventListener('click', deleteHandler);
+};
+

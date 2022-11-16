@@ -2,7 +2,7 @@ const router = require('express').Router();
 const { Post } = require('../../models/');
 const withAuth = require('../../utils/auth');
 
-// Create Post based upon psot fomr
+// create a new post and "POST" it to the db
 router.post('/', withAuth, async (req, res) => {
   try {
     const post = await Post.create({
@@ -17,14 +17,14 @@ router.post('/', withAuth, async (req, res) => {
   }
 });
 
-// Update form with modal from dashboard page
-
+// update functionality for the user to update posts
 router.put('/', withAuth, async (req, res) => {
   try {
     Post.update({
       title: req.body.title,
       content: req.body.content,
     },
+    // identifies the specific post that the user would like to update
     {
       where: {
         id: req.body.id,
@@ -36,16 +36,17 @@ router.put('/', withAuth, async (req, res) => {
   }
 });
 
-// Delete form with button from dashboard page
+// deletes the users selected post
 router.delete('/:id', withAuth, async (req, res) => { 
   try {
     const postData = await Post.destroy({ 
+      // identifies the specific post that the user wishes to delete
       where: {
         id: req.params.id,
         user_id: req.session.user_id,
       },
     });
-
+    // notification if the post id is not found
     if (!postData) {
       res.status(404).json({ message: 'No post found with this id!' });
       return;

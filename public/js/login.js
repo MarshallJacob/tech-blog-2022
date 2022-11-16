@@ -1,7 +1,3 @@
-// event listener for the login button
-const loginBtn = document.getElementById('loginBtn')
-loginBtn.addEventListener('click', login);
-
 // functionality for loggin the user in
 const login = async (event) => {
   event.preventDefault();
@@ -26,3 +22,6 @@ const login = async (event) => {
     }
   }
 };
+// event listener for the login button
+const loginBtn = document.getElementById('loginBtn')
+loginBtn.addEventListener('click', login);

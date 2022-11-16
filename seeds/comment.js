@@ -1,16 +1,16 @@
-// Seeding comment Data for functionality purposes
 const { Comment } = require('../models');
 
+// comment seeds for the database
 const comment = [
     {
         id: 1,
-        comment: "JavaScript is quite amazing!!!",
+        comment: "Mostly Javascript. It's great!",
         user_id: 5,
         post_id: 4,
     },
     {
         id: 2,
-        comment: "ORM is SOOO interesting!",
+        comment: "I'm pretty into React! It's really awesome! Handlebars is kind of trash...",
         user_id: 1,
         post_id: 3,
     },

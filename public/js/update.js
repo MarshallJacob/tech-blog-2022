@@ -1,16 +1,9 @@
-// Show Modal
-function updatePostCreation() {
-    const modal = document.querySelector('.modalBtn');
-    modal.classList.remove('hide');
-};
-// Hide Modal Function
-function hideModal() {
-    const modal = document.querySelector('.modalBtn');
-    modal.classList.add('hide');
-    document.location.replace('/dashboard');
+// event listeners for updating a post
+document.querySelector('#modalUpdate').addEventListener('click', hideModal);
+document.querySelector('#modalUpdate').addEventListener('click', updatePost);
+document.querySelector('.updatePost').addEventListener('click', updatePostCreation);
 
-}
-//  Function for updating post
+// full funcionlality for updating an existing users post
 async function updatePost(event) {
     event.preventDefault();
 
@@ -20,6 +13,7 @@ async function updatePost(event) {
 
     const title = document.querySelector('#updateTitle').value;
     const content = document.querySelector('#updateContent').value;
+    // using the "PUT" method to update user posts
     const response = await fetch('/api/posts', {
         method: 'PUT',
         body: JSON.stringify({
@@ -38,8 +32,13 @@ async function updatePost(event) {
         alert(response.statusText);
     };
 };
+function updatePostCreation() {
+    const modal = document.querySelector('.modalBtn');
+    modal.classList.remove('hide');
+};
+function hideModal() {
+    const modal = document.querySelector('.modalBtn');
+    modal.classList.add('hide');
+    document.location.replace('/dashboard');
 
-
-document.querySelector('#modalUpdate').addEventListener('click', hideModal);
-document.querySelector('#modalUpdate').addEventListener('click', updatePost);
-document.querySelector('.updatePost').addEventListener('click', updatePostCreation);
+};

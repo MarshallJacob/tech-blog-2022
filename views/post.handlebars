@@ -1,4 +1,3 @@
-{{!-- View a Post Page --}}
 <div class="mx-5 px-5">
     <card class="m-3 h-25 d-inline-block w-100 border border-4">
         <div class="d-flex bg-secondary text-white py-3 m-1">
@@ -15,7 +14,7 @@
         <div class="d-flex bg-secondary text-white py-3 m-1">
             <div class="mx-3 text-white ">Comments</div>
         </div>
-        {{!-- Loop over comments if there --}}
+        {{!-- checks for existing comments and then loops through them to display them --}}
         {{#if thePost.comments}}
         {{#each thePost.comments}}
         <div class="my-3">
@@ -31,16 +30,16 @@
     </card>
 </div>
 
-{{!-- View only if loogged in --}}
+{{!-- checks that the user is logged in and displays if they are --}}
 {{#if loggedIn}}
 <div class="mx-5 px-5 hide" id="commentForm">
     <section class="card mb-5  m-3 h-25 d-inline-block w-100 border border-4">
-        <div class="card-header bg-secondary text-white">Create New Comment</div>
+        <div class="card-header bg-secondary text-white">Create a Comment</div>
         <div class="card-body">
             <form class="newCommentForm">
                 <div>
                     <input type="hidden" name="post_id" id="postIdValue" value="{{id}}">
-                    <label class="form-label">Please Enter your Comment</label>
+                    <label class="form-label">Please Enter a Comment</label>
                     <input class="form-input w-100 mb-2" id="commentComment" type="text" name="post" />
                 </div>
 
@@ -50,11 +49,11 @@
     </section>
 </div>
 <div class="text-center mt-1">
-    <button type="button" class="mx-auto title mb-5" style="width: 200px;" id="createComment">Post your Comment</button>
+    <button type="button" class="mx-auto title mb-5" style="width: 200px;" id="createComment">Post a Comment</button>
 </div>
 </div>
 {{else}}
-<p class="mx-auto title" style="width: 300px;">Please Login to Comment on Posts</p>
+<p class="mx-auto title" style="width: 300px;">Please login in order to comment on other posts</p>
 {{/if}}
 
 <script src="../js/createComment.js"></script>

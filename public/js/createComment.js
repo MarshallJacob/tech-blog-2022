@@ -1,3 +1,7 @@
+// event listener for creating a new comment
+document.querySelector('.newCommentForm').addEventListener('submit', newComment);
+createComment.addEventListener('click', showCommentCreation)
+
 // Show comment Section
 function showCommentCreation() {
     const createComment = document.querySelector('#createComment');
@@ -33,7 +37,4 @@ function showCommentCreation() {
     } else {
       alert(response.statusText);
     }
-  }
-  
-  document.querySelector('.newCommentForm').addEventListener('submit', newComment);
-  createComment.addEventListener('click', showCommentCreation)
+  };

@@ -1,17 +1,14 @@
-// Show Post Creation
-function showPostCreation() {
-  const createPost = document.querySelector('#createPost');
-  const postForm = document.querySelector('#postForm');
-  postForm.classList.remove('hide');
-  createPost.classList.add('hide');
-};
+// event listener for creating a new post
+document.querySelector('.newPostForm').addEventListener('submit', newPost);
+createPost.addEventListener('click', showPostCreation)
 
-// Create Post Function
+// handle create post functionality
 async function newPost(event) {
   event.preventDefault();
 
   const title = document.querySelector('#postTitle').value;
   const content = document.querySelector('#postContent').value;
+  // using the "POST" method to create a new post
   const response = await fetch('/api/posts', {
     method: 'POST',
     body: JSON.stringify({
@@ -32,5 +29,10 @@ async function newPost(event) {
   }
 }
 
-document.querySelector('.newPostForm').addEventListener('submit', newPost);
-createPost.addEventListener('click', showPostCreation)
+// shows posts after creation
+function showPostCreation() {
+  const createPost = document.querySelector('#createPost');
+  const postForm = document.querySelector('#postForm');
+  postForm.classList.remove('hide');
+  createPost.classList.add('hide');
+};

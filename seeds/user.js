@@ -1,42 +1,48 @@
-// Seeding User Data for functionality purposes
 const { User } = require('../models');
 
+// user seeds for database and testing functionality
 const user = [
     {
-      username: "Sally",
-      email: "Sallyduh@hotmail.com",
-      password: "password12asdf345"
+      username: "Tom",
+      email: "tom@email.com",
+      password: "password1234"
     },
     {
-      username: "Kazuo",
-      email: "kazuodude@gmail.com",
-      password: "passasdfword12345"
+      username: "NotTOM",
+      email: "nottom@notmail.com",
+      password: "password2134"
     },
     {
-      username: "Juan",
-      email: "juan2k20@aol.com",
-      password: "password1231235"
+      username: "JuanCarlos",
+      email: "jcarlos@email.com",
+      password: "pass1w2o3r4d"
     },
     {
-      username: "Eric",
-      email: "Eric@Ericpants.com",
-      password: "EricPants"
+      username: "DonJulio",
+      email: "donjulio@donquixote.com",
+      password: "quixote1234"
     },
     {
-      username: "Charly",
-      email: "charly1@hotmail.com",
-      password: "iamcharlyblue123"
+      username: "Charles",
+      email: "charles@fancymail.com",
+      password: "imbetterthanyou?"
     },
     {
-      username: "Natasha",
-      email: "natty@gmail.com",
-      password: "nattynuts"
+      username: "Stacy",
+      email: "stacy@email.com",
+      password: "passeswords"
     },
     {
-      username: "BAMBAM",
-      email: "bbushman@ahsmail.com",
-      password: "$2b$10$Csf.riSpdapa4z2IsaMBqeVRlDf1m4vFcd8gxI8Lnl2Dz9eW5IWxe"
+      username: "Cateline",
+      email: "caite@email.com",
+      password: "12344321yes"
+    },
+    {
+      username: "Marsh",
+      email: "marsh@email.com",
+      password: "password"
     }
+
   ]
 
   const seedUser = () => User.bulkCreate(user);

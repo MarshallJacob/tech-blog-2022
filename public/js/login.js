@@ -1,7 +1,10 @@
-// login function
+// event listener for the login button
+const loginBtn = document.getElementById('loginBtn')
+loginBtn.addEventListener('click', login);
+
+// functionality for loggin the user in
 const login = async (event) => {
   event.preventDefault();
-
   const email = document.querySelector('#emailVal').value.trim();
   const password = document.querySelector('#passwordVal').value.trim();
 
@@ -23,6 +26,3 @@ const login = async (event) => {
     }
   }
 };
-
-const loginBtn = document.getElementById('loginBtn')
-loginBtn.addEventListener('click', login);

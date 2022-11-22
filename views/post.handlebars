@@ -1,6 +1,6 @@
 <div class="mx-5 px-5">
     <card class="m-3 h-25 d-inline-block w-100 border border-4">
-        <div class="d-flex bg-secondary text-white py-3 m-1">
+        <div class="d-flex bg-info text-white py-3 m-1">
             <div class="mx-3 text-white ">{{thePost.title}}</div>
             <a class="a ms-auto text-white"></a>
             <div class="mx-3">Created on {{format_date thePost.date_created}} by {{thePost.user.username}}</div>
@@ -11,7 +11,7 @@
 
 <div class="mx-5 px-5">
     <card class="m-3 h-25 d-inline-block w-100 border border-4">
-        <div class="d-flex bg-secondary text-white py-3 m-1">
+        <div class="d-flex bg-info text-white py-3 m-1">
             <div class="mx-3 text-white ">Comments</div>
         </div>
         {{!-- checks for existing comments and then loops through them to display them --}}
@@ -34,7 +34,7 @@
 {{#if loggedIn}}
 <div class="mx-5 px-5 hide" id="commentForm">
     <section class="card mb-5  m-3 h-25 d-inline-block w-100 border border-4">
-        <div class="card-header bg-secondary text-white">Create a Comment</div>
+        <div class="card-header bg-info text-white">Create a Comment</div>
         <div class="card-body">
             <form class="newCommentForm">
                 <div>
@@ -43,7 +43,7 @@
                     <input class="form-input w-100 mb-2" id="commentComment" type="text" name="post" />
                 </div>
 
-                <button type="submit" class="bg-secondary text-white" id="submitComment">Submit</button>
+                <button type="submit" class="bg-info text-white" id="submitComment">Submit</button>
             </form>
         </div>
     </section>

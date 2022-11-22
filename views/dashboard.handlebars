@@ -15,28 +15,28 @@
                         </div>
                         </a>
                         <button class="d-inline ml-auto m-1 ms-auto" data-id="{{id}}"><a class="a"
-                                href="/post/{{id}}">View Post Details</a></button>
+                                href="/post/{{id}}">View Post</a></button>
                         <button class="d-inline ml-auto m-1 deleteBtn" data-id="{{id}}">Delete</button>
                     </li>
                 </div>
                 {{/each}}
                 {{else}}
-                <p class="font-italic mt-2">You don't have any posts. Make some!</p>
+                <p class="font-italic mt-2">You don't have any posts... Make some!</p>
                 {{/if}}
             </ul>
         </div>
     </section>
 
     <section class="card mb-5 hide" id="postForm">
-        <div class="card-header bg-dark text-white">Create A New Post</div>
+        <div class="card-header bg-dark text-white">Create New Post</div>
         <div class="card-body">
             <form class="newPostForm">
                 <div>
-                    <label class="form-label">Title:</label>
+                    <label class="form-label">Post Title:</label>
                     <input class="form-input w-100 mb-2" id="postTitle" type="text" name="title" />
                 </div>
                 <div>
-                    <label class="form-label">Content:</label>
+                    <label class="form-label">Post Content:</label>
                     <input class="form-input w-100 mb-2" id="postContent" type="text" name="post" />
                 </div>
 
@@ -62,17 +62,16 @@
         aria-labelledby="staticBackdropLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
-                <div class="modal-header fw-bolder">Update Your Post</div>
+                <div class="modal-header fw-bolder">Update Post</div>
                 <p class="mx-3 fw-bold">Post Number:</p>
                 <input class="modal-body px-3 mx-3" type="text" id="PostID" name="postId">
-                <p class="m-3 fw-bold">Title:</p>
+                <p class="m-3 fw-bold">Post Title:</p>
                 <input class="modal-body px-3 mx-3" type="text" id="updateTitle" name="updateTitle">
-                <p class="m-3 fw-bold">Content:</p>
+                <p class="m-3 fw-bold">Post Content:</p>
                 <input class="modal-body px-3 mx-3" type="text" id="updateContent" name="updateContent">
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary" id="modalUpdate">Update your
-                        Post</button>
+                    <button type="button" class="btn btn-primary" id="modalUpdate">Update Post</button>
                 </div>
             </div>
         </div>

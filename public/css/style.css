@@ -1,14 +1,18 @@
 /* Styling for specific colors and displays */
 
 #logout {
-    color: rgba(255, 255, 255, .55);
+    color: rgba(107, 107, 107, 0.55);
     border: none;
     padding-top: 8px;
     margin-left: 2px
 }
 
+.navbar-nav {
+    align-items: right;
+}
+
 .secText {
-    color: rgba(255, 255, 255, .55)
+    color: rgba(107, 107, 107, 0.55);
 }
 
 .hide {

@@ -1,7 +1,7 @@
 {{!-- Render the dashboard page for the user when signed in --}}
-<div class="container">
+<div class="container" id="dash-board">
     <section class="mb-5">
-        <div class="card-header bg-dark h2 text-white">Current Posts</div>
+        <div class="card-header bg-info h2 text-white text-center w-100 border border-4">Current Posts</div>
 
         <div>
             <ul class="p-1">
@@ -21,7 +21,7 @@
                 </div>
                 {{/each}}
                 {{else}}
-                <p class="font-italic mt-2">You don't have any posts... Make some!</p>
+                <p class="font-italic mt-2 text-center">You don't have any posts... Make some!</p>
                 {{/if}}
             </ul>
         </div>
@@ -46,7 +46,7 @@
     </section>
 </div>
 <div class="text-center mt-3">
-
+    {{!-- logic checking for posts and displays posts if they exist --}}
     {{#if posts.length}}
     <button type="button" class="mx-auto title" style="width: 200px;" id="createPost">Post your Post</button>
     <button class="d-inline ml-auto m-1 ms-auto updatePost" type="button" data-bs-target="#staticBackdrop"

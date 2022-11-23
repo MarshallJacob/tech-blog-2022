@@ -7,6 +7,10 @@
     margin-left: 2px
 }
 
+#dash-board {
+    padding-top: 5rem;
+}
+
 .navbar-nav {
     align-items: right;
 }

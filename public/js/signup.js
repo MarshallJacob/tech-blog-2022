@@ -5,6 +5,7 @@ const signUp = async (event) => {
   const username = document.querySelector('#signupName').value.trim();
   const email = document.querySelector('#signupEmail').value.trim();
   const password = document.querySelector('#signupPassword').value.trim();
+  
 
   if (username && email && password) {
     // using the "post" method for creating a new user
